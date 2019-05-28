@@ -19,7 +19,8 @@ var myModule = (function () {
         nCurrentTime = nTime * 1000;
     };
 
-    // Take array of unsorted play fragments, then sort and merge where possible
+    // Take array of unsorted play fragments and return array of non-overlapping range objects
+    // covering the same range(s) as input ordered from smallest start to largest
     const sortAndMergeFragments = aAllFragments => {
         const aMergedFragments = []; // initialise array to hold results if we get any
         let oLastFragment;           // the last fragment processed
